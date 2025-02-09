@@ -1,0 +1,48 @@
+/* src/components/ProgressChart/ProgressChart.module.css */
+
+.chartWrapper {
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .chartTitle {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+    text-align: center;
+  }
+  
+  /* Subtle pulse animation on hover to draw attention */
+  .chartWrapper:hover {
+    animation: pulse 1s infinite;
+  }
+  
+  /* Fade-in effect when the chart loads */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Pulse animation for gentle interactivity */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.02);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  

@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #6200ee;
+    --secondary-color: #03dac6;
+    --bg-light: #ffffff;
+    --bg-dark: #121212;
+    --text-light: #333333;
+    --text-dark: #ffffff;
+    /* Priority colors for tasks */
+    --priority-high: #ff5252;
+    --priority-medium: #ffb74d;
+    --priority-low: #81c784;
+  }
+  
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-light);
+    }
+
+@media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+    .navLinks {
+      flex-direction: column;
+    }
+  }
+  

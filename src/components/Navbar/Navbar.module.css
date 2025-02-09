@@ -1,0 +1,128 @@
+/* src/components/Navbar/Navbar.module.css */
+
+/* Header container fixed to top with shadow */
+.header {
+    width: 100%;
+    background-color: var(--bg-light); /* Ensure this is defined in your global CSS */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 100;
+  }
+  
+  /* Navbar container: centers content and uses flexbox */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Logo container styling */
+  .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-light); /* Ensure this is defined in your global CSS */
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .logo a:hover {
+    color: var(--primary-color); /* Your primary accent color */
+  }
+  
+  /* Logo icon styling */
+  .logoIcon {
+    margin-right: 0.5rem;
+    font-size: 2rem;
+  }
+  
+  /* Mobile menu icon: hidden on larger screens */
+  .menuIcon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: color 0.3s ease;
+  }
+  
+  .menuIcon:hover {
+    color: var(--primary-color);
+  }
+  
+  /* Navigation links container */
+  .navLinks {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Individual navigation item */
+  .navItem {
+    margin-left: 2rem;
+  }
+  
+  /* Navigation link styling */
+  .navLink {
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  /* Underline effect on hover */
+  .navLink::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease-in-out;
+  }
+  
+  .navLink:hover {
+    color: var(--primary-color);
+  }
+  
+  .navLink:hover::after {
+    width: 100%;
+  }
+  
+  /* Responsive Mobile Styles */
+  @media (max-width: 768px) {
+    .menuIcon {
+      display: block;
+    }
+  
+    .navLinks {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--bg-light);
+      flex-direction: column;
+      align-items: center;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease-in-out;
+    }
+  
+    /* When mobile menu is active, expand the container */
+    .navLinks.active {
+      max-height: 300px; /* Adjust height as needed */
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  
+    .navItem {
+      margin: 1rem 0;
+    }
+  }
+  
